@@ -1,0 +1,14 @@
+<a href={% url 'current_listings'%}>Home</a>
+{% if missing_fields %}
+    <p> Enter both a username and password </p>
+{% endif %}
+{% if invalid_user %}
+    <p> Enter a valid username and password or create an account</p><a href={% url 'create_account'%}>Create Account</a>
+{% endif %}
+<form action={% url 'account'%} method="POST">
+    {% csrf_token %}
+    <div><label>email: </label><input type="text" name="email"></div>
+    <div><label>password: </label><input type="text" name="password"></div>
+    <div><input type="submit" value="Submit"></div>
+    <input type="hidden" name="previous_page" value={{request.path}}>
+</form>

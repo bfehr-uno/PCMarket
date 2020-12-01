@@ -1,0 +1,16 @@
+{% if request.user.is_anonymous == False %}
+    <a href={% url 'easy_buy'%}>Easy Buy</a>
+    <a href={% url 'sell'%}>List a part</a>
+    <a href={% url 'account'%}>View Account</a>
+    <a href={% url 'login'%}>Logout</a>
+{% else %}
+    <a href={% url 'create_account'%}>Create Account</a>
+    <a href={% url 'login'%}>Login</a>
+{% endif %}
+<ul>
+{% for listing in listings %}
+        <a href={% url "single_listing" listing.id %}><div> {{listing.part_type}}: {{listing.model_name}} price: {{listing.price}} </div></a>
+    {% empty %}
+        <li> There are no current listings </li>
+{% endfor %}
+</ul>

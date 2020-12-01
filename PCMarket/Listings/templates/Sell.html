@@ -1,0 +1,48 @@
+<h1>CPU</h1>
+<form action={% url 'list_part' "CPU"%} method="POST">
+    {% csrf_token %}
+    <div><label>Model Name: </label><input type="text" name="model_name"></div>
+    <div><label>Number of Cores: </label><input type="text" name="num_of_cores"></div>
+    <div><label>Frequency: </label><input type="text" name="frequency"></div>
+    <div><label>Socket Type: </label><input type="text" name="socket"></div>
+    <div><label>Price: </label><input type="text" name="price"></div>
+    <div><input type="submit" value="List"></div>
+</form>
+<h1>GPU</h1>
+<form action={% url 'list_part' "GPU"%} method="POST">
+    {% csrf_token %}
+    <div><label>Model Name: </label><input type="text" name="model_name"></div>
+    <div><label>Clock Speed: </label><input type="text" name="clock_speed"></div>
+    <div><label>Interface: </label><input type="text" name="interface"></div>
+    <div><label>Memory: </label><input type="text" name="memory"></div>
+    <div><label>Price: </label><input type="text" name="price"></div>
+    <div><input type="submit" value="List"></div>
+</form>
+<h1>Hard Drive</h1>
+<form action={% url 'list_part' "Hard Drive"%} method="POST">
+    {% csrf_token %}
+    <div><label>Model Name: </label><input type="text" name="model_name"></div>
+    <div><label>Storage: </label><input type="text" name="storage"></div>
+    <div><label>Rotations per Minute: </label><input type="text" name="rpm"></div>
+    <div><label>Price: </label><input type="text" name="price"></div>
+    <div><input type="submit" value="List"></div>
+</form>
+<h1>Motherboard</h1>
+<form action={% url 'list_part' "Motherboard"%} method="POST">
+    {% csrf_token %}
+    <div><label>Model Name: </label><input type="text" name="model_name"></div>
+    <div><label>Socket Type: </label><input type="text" name="socket"></div>
+    <div><label>Expansion Slots: </label><input type="text" name="expansion_slots"></div>
+    <div><label>Price: </label><input type="text" name="price"></div>
+    <div><input type="submit" value="List"></div>
+</form>
+<h1>RAM</h1>
+<form action={% url 'list_part' "RAM"%} method="POST">
+    {% csrf_token %}
+    <div><label>Model Name: </label><input type="text" name="model_name"></div>
+    <div><label>Capacity: </label><input type="text" name="capacity"></div>
+    <div><label>Type: </label><input type="text" name="type"></div>
+    <div><label>Speed: </label><input type="text" name="speed"></div>
+    <div><label>Price: </label><input type="text" name="price"></div>
+    <div><input type="submit" value="List"></div>
+</form>

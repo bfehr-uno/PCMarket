@@ -1,0 +1,13 @@
+<form action={% url 'account' %} method="POST">
+    {% csrf_token %}
+    <div><label>Full Name: </label><input type="text" name="name"></div>
+    <div><label>Email: </label><input type="text" name="email"></div>
+    <div><label>Password: </label><input type="text" name="password"></div>
+    <div><input type="submit" value="Create"></div>
+</form>
+{% if email_used %}
+    <p>email is already in use</p>
+{% endif %}
+{% if missing_fields %}
+    <p>please fill in all fields</p>
+{% endif %}

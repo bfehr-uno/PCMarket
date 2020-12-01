@@ -1,0 +1,21 @@
+<a href={% url 'current_listings'%}>View Current Listings</a>
+{% if just_listed %}
+    <h1>Yours!!</h1>
+{% endif %}
+<ul>
+    {% for key, value in sold_listing.attrs.items %}
+        <li>{{key}}: {{value}}</li>
+    {% endfor %}
+    <li><form action={% url 'purchase' listing.id %} method="POST">
+            {% csrf_token %}
+            {% if request.user.is_anonymous == False %}
+                <input type="submit" value="Purchase">
+            {% else %}
+                <input type="submit" value="Purchase" disabled>
+            {% endif %}
+        </form>
+    </li>
+    {% if purchased %}
+        <li>successfully purchased</li>
+    {% endif %}
+</ul>

@@ -1,0 +1,7 @@
+<a href={% url 'current_listings'%}>Home<a>
+<ul>
+    {% for key, value in listing.attrs.items %}
+        <li>{{key}}: {{value}}</li>
+    {% endfor %}
+    <li>successfully purchased</li>
+</ul>

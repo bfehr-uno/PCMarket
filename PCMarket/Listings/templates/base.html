@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/Listings/base.css' %}">
+    <title>PC Market</title>
+</head>
+
+<body>
+    <div id="header">
+        <div class="inner_header">
+			<div class="logo_container"><a href="CurrentListings.jsp" style="color: black;">PC Market</a></div>
+			<div class="filler"></div>
+			<div class="navigation-items">
+				<div class="navigation-item"> 
+					<div class="text" >Sell</div>
+				  	<div class="dropdown-content">
+				  		<div><a href="SellCPU.jsp">CPU</a></div>
+				  		<div><a href="SellGPU.jsp">GPU</a></div>
+				  		<div><a href="SellHardDrive.jsp">Hard Drive</a></div>
+				  		<div><a href="SellMotherboard.jsp">Motherboard</a></div>
+				  	</div>
+				</div>
+				<div class="navigation-item">
+				  	<div class="text">Easy Buy</div>
+				  	<div class="dropdown-content">
+				  		<div><a href="EasyBuyCPU.jsp">CPU</a></div>
+				  		<div><a href="EasyBuyGPU.jsp">MotherBoard</a></div>
+				  		<div><a href="EasyBuyHardDrive.jsp">Hard Drive</a></div>
+				  		<div><a href="EasyBuyMotherboard.jsp">Motherboard</a></div>
+				  	</div>
+				</div>
+				<div class="navigation-item">
+					<a href="Login.jsp">Login</a>
+				</div>
+	  		</div>
+		</div>
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

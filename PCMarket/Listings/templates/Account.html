@@ -1,0 +1,41 @@
+<a href={% url 'current_listings' %}>Home</a>
+<ul>
+    <li>{{ user.name }}</li>
+    <li>{{ user.email }}</li>
+    <li>Current Listings: 
+        <ul>
+        {% for listing in user.current_listings.all %}
+            <li>{{ listing.model_name }} ${{ listing.price }}</li>
+            {% empty %}
+                <li>None yet</li>
+        {% endfor %}
+        </ul>
+    </li>
+    <li>Sold Listings: 
+        <ul>
+        {% for listing in user.sold_listings.all %}
+            <li>{{ listing.model_name }} ${{ listing.price }}</li>
+            {% empty %}
+                <li>None yet</li>
+        {% endfor %}
+        </ul>
+    </li>  
+    <li>Purchases: 
+        <ul>
+        {% for purchase in user.purchases.all %}
+            <li>{{ purchase.model_name }} ${{ purchase.price }}</li>
+            {% empty %}
+                <li>None yet</li>
+        {% endfor %}
+        </ul>
+    </li>
+    <li>Followings: 
+        <ul>
+        {% for following in user.followings.all %}
+            <li>{{ following.model_name }} ${{ following.price }}</li>
+            {% empty %}
+                <li>None yet</li>
+        {% endfor %}
+        </ul>
+    </li>
+</ul>
